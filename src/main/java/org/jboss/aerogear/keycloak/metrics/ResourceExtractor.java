@@ -67,7 +67,7 @@ class ResourceExtractor {
             List<String> matchedURIs = uriInfo.getMatchedURIs();
             StringBuilder sb = new StringBuilder();
 
-            if (URI_METRICS_FILTER != null && URI_METRICS_FILTER.length() != 0) {
+            if (URI_METRICS_FILTER != null && URI_METRICS_FILTER.length() != 0 && !matchedURIs.isEmpty()) {
                 String[] filter = URI_METRICS_FILTER.split(",");
 
                 for (int i = 0; i < filter.length; i++) {
