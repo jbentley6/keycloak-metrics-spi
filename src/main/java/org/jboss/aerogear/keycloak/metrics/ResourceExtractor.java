@@ -63,11 +63,11 @@ class ResourceExtractor {
      * @return The resource uri.
      */
     static String getURI(UriInfo uriInfo) {
-        if (URI_METRICS_ENABLED) {
+        if (URI_METRICS_ENABLED && !matchedURIs.isEmpty()) {
             List<String> matchedURIs = uriInfo.getMatchedURIs();
             StringBuilder sb = new StringBuilder();
 
-            if (URI_METRICS_FILTER != null && URI_METRICS_FILTER.length() != 0 && !matchedURIs.isEmpty()) {
+            if (URI_METRICS_FILTER != null && URI_METRICS_FILTER.length() != 0) {
                 String[] filter = URI_METRICS_FILTER.split(",");
 
                 for (int i = 0; i < filter.length; i++) {
